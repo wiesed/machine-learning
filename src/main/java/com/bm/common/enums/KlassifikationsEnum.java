@@ -8,15 +8,8 @@ package com.bm.common.enums;
  */
 public enum KlassifikationsEnum implements EnumConverter {
 
-	NEGATIVE_NACHRICHT(1, "neg. Nachricht"),
-	POSITIVE_NACHRICHT(2, "pos. Nachricht"),
-	NICHT_MARKTUEBERSICHT(3, "nur eine Aktie"),
-	ANAYLSTENEMPFEHLUNG(4, "Analysten allgemein"),
-	SCHROTT(5, "Schrott"),
-	ANALYSTEN_ZU_EINER_AKTIE(6, "Analysten eine Aktie"),
-	ANAYLST_NEGATIV(7, "neg Analyst"),
-	GESCHAEFTSZAHLEN(8, "geschaeftszahlen"),
-	ELBA_TYPE(9, "elba");
+	TEXT_CLASSIFICATION(1, "Textklassifikation"),
+	TEXT_CLASSIFICATION_MULTI_LABEL(2, "TextklassifikationMultiLabel");
 
 	private static KlassifikationsEnum[] endUserValues = null;
 
@@ -49,17 +42,15 @@ public enum KlassifikationsEnum implements EnumConverter {
 	}
 
 	/**
-	 * Lifet die enum werte die sinn machen fuer den ga und produktion.
+	 * Lifet die enum werte die Sinn machen fuer den ga und produktion.
 	 * 
 	 * @return die news werte die sinn machen.
 	 */
 	public static KlassifikationsEnum[] getEndUserValues() {
 		if (endUserValues == null) {
-			endUserValues = new KlassifikationsEnum[4];
-			endUserValues[0] = KlassifikationsEnum.NICHT_MARKTUEBERSICHT;
-			endUserValues[1] = KlassifikationsEnum.NEGATIVE_NACHRICHT;
-			endUserValues[2] = KlassifikationsEnum.ANALYSTEN_ZU_EINER_AKTIE;
-			endUserValues[3] = KlassifikationsEnum.GESCHAEFTSZAHLEN;
+			endUserValues = new KlassifikationsEnum[2];
+			endUserValues[0] = KlassifikationsEnum.TEXT_CLASSIFICATION;
+			endUserValues[1] = KlassifikationsEnum.TEXT_CLASSIFICATION_MULTI_LABEL;
 		}
 		return endUserValues;
 	}
@@ -68,7 +59,6 @@ public enum KlassifikationsEnum implements EnumConverter {
 	 * Zur Konvertierung der Enum in eine Zahl.
 	 * 
 	 * @return interner Wert
-	 * @see com.bm.data.bo.enums.EnumConverter#convert()
 	 */
 	public int convert() {
 		return this.value;
