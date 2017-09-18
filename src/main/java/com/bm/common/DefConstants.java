@@ -11,11 +11,11 @@ public interface DefConstants {
 	/**
 	 * TEMP verzeichniss Windows.
 	 */
-	String TEMP_WINDOWS = "C:\\temp";
+	String TEMP_WINDOWS = System.getProperty("java.io.tmpdir");
 
 	/**
 	 * TEMP verzeichniss Linux.
 	 */
-	String TEMP_LINUX = "/Users/Shared/Development/temp";
+	String TEMP_LINUX = System.getProperty("java.io.tmpdir");
 
 }
