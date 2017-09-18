@@ -95,7 +95,7 @@
         </dependency>
 	</dependencies>
 	<reporting />
-    <!-- Verteilung (SWM)-->
+    <!-- Verteilung (SWM Nexus)-->
     <distributionManagement>
         <repository>
             <id>SWMReleases</id>
