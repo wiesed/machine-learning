@@ -6,6 +6,10 @@
 	<name>maschine-learning</name>
 	<description>Machine Learning with Suport Vector Machines</description>
 	<url>https://github.com/wiesed/machine-learning/</url>
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 	<issueManagement>
 		<url>https://github.com/wiesed/machine-learning/</url>
 	</issueManagement>
