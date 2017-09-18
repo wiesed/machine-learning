@@ -1,28 +1,21 @@
 package com.bm.classify.core.helper;
 
-import static com.bm.common.util.BmUtil.getOs;
-import static com.bm.common.util.BmUtil.getTempDirectory;
+import com.bm.classify.ClassifyConstants;
+import com.bm.classify.ClassifyEnvironment;
+import com.bm.common.util.OsTypes;
+import org.apache.log4j.Logger;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.URL;
 import java.util.jar.JarInputStream;
 import java.util.zip.ZipEntry;
 
-import org.apache.log4j.Logger;
-
-import com.bm.classify.ClassifyConstants;
-import com.bm.classify.ClassifyEnvironment;
-import com.bm.common.util.OsTypes;
+import static com.bm.common.util.BmUtil.getOs;
+import static com.bm.common.util.BmUtil.getTempDirectory;
 
 /**
  * Beritet die SVM c++ libs fuer das jeweilige betriebssystem vor.
- * 
+ *
  * @author Daniel Wiese
  * @since 02.06.2006
  */
@@ -30,7 +23,9 @@ public class NativeLibraryLoader implements ClassifyConstants {
 
 	private static final String SVM_PATH = "svm" + File.separatorChar;
 
-	/** logger instance * */
+	/**
+	 * logger instance *
+	 */
 	private static final Logger log = Logger
 			.getLogger(NativeLibraryLoader.class);
 
@@ -38,7 +33,6 @@ public class NativeLibraryLoader implements ClassifyConstants {
 
 	/**
 	 * Defaukt constructor.
-	 * 
 	 */
 	public NativeLibraryLoader() {
 		this.tempDirectoryPath = new File(new File(getTempDirectory()),
@@ -50,7 +44,7 @@ public class NativeLibraryLoader implements ClassifyConstants {
 
 	/**
 	 * Extracts/Load the SVM execs depending to the operating system.
-	 * 
+	 *
 	 * @return - the paths to svm learn and svm classify
 	 */
 	public SVMEnviroment prepareSVMEnviroment() {
@@ -85,22 +79,23 @@ public class NativeLibraryLoader implements ClassifyConstants {
 	/**
 	 * Load a naitive lib packaged in a JAR file. I aupomatically extract the
 	 * lib to the serve specific native lib directory
-	 * 
-	 * @param environment
-	 *            - the name of the libary
-	 *             - in an error case
+	 *
+	 * @param environment - the name of the libary
+	 *                    - in an error case
 	 */
 	private void loadLibraryInJar(ClassifyEnvironment environment) {
 		try {
-			final URL url = this.getClass().getClassLoader().getResource(
-					environment.getIdentyfier());
+			final URL url = Thread.currentThread()
+								  .getContextClassLoader()
+								  .getResource(
+										  "svm/" + environment.getIdentyfier());
 			if (url == null) {
 				throw new RuntimeException(
 						"The svm-xxx.jar is missing in the App-Server classpath");
 			}
-			// FIXME: hack
+
 			// vorher chmod a+x svm_classify ausfuehren
-			final String jarName = "/" + isolateJarName(url);
+			final String jarName = url.getFile();
 			if (jarName == null) {
 				throw new RuntimeException(
 						"The svm-xxx.jar does not contain the (" + environment
@@ -133,15 +128,17 @@ public class NativeLibraryLoader implements ClassifyConstants {
 			throws IOException {
 		if (environment.isExecuteChmodCommand()) {
 			try {
-				Process process = Runtime.getRuntime().exec(
-						"chmod " + environment.getChmodCommand() + " "
-								+ this.tempDirectoryPath + File.separatorChar
-								+ environment.getClassify_name());
+				Process process = Runtime.getRuntime()
+										 .exec(
+												 "chmod " + environment.getChmodCommand() + " "
+														 + this.tempDirectoryPath + File.separatorChar
+														 + environment.getClassify_name());
 				process.waitFor();
-				process = Runtime.getRuntime().exec(
-						"chmod " + environment.getChmodCommand() + " "
-								+ this.tempDirectoryPath + File.separatorChar
-								+ environment.getLearn_name());
+				process = Runtime.getRuntime()
+								 .exec(
+										 "chmod " + environment.getChmodCommand() + " "
+												 + this.tempDirectoryPath + File.separatorChar
+												 + environment.getLearn_name());
 				process.waitFor();
 			} catch (InterruptedException e) {
 				log.error("Process interupted", e);
@@ -151,9 +148,8 @@ public class NativeLibraryLoader implements ClassifyConstants {
 
 	/**
 	 * Isolates a jar file when a file was found inside a jar
-	 * 
-	 * @param fileInJar
-	 *            - the path to the file inside the jar file
+	 *
+	 * @param fileInJar - the path to the file inside the jar file
 	 * @return - the name of the jar file
 	 */
 	private static String isolateJarName(URL fileInJar) {
@@ -169,13 +165,10 @@ public class NativeLibraryLoader implements ClassifyConstants {
 
 	/**
 	 * Dump the contents of a JarArchive to the dpecified destination.
-	 * 
-	 * @param in
-	 *            - the jar archive as input stream
-	 * @param dest
-	 *            - the destination (to extract the content)
-	 * @throws IOException
-	 *             - in an error case
+	 *
+	 * @param in   - the jar archive as input stream
+	 * @param dest - the destination (to extract the content)
+	 * @throws IOException - in an error case
 	 */
 	private static void unjar(InputStream in, File dest) throws IOException {
 

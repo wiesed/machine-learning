@@ -8,13 +8,13 @@ package com.bm.classify;
 public enum ClassifyEnvironment {
 
 	/** windows settings. **/
-	WINDOWS("svm_classify.exe", "svm_classify.exe", "svm_learn.exe", false, null),
+	WINDOWS("svmLight-windows-8.4.jar", "svm_classify.exe", "svm_learn.exe", false, null),
 
 	/** linux settings. **/
-	LINUX("svm_classify", "svm_classify", "svm_learn", false, null),
+	LINUX("svmLight-linux-8.4.jar", "svm_classify", "svm_learn", false, null),
 
 	/** mac settings. **/
-	MAC("svm_classify", "svm_classify", "svm_learn", true, "a+x");
+	MAC("svmLight-mac-8.4.jar", "svm_classify", "svm_learn", true, "a+x");
 
 	private String identyfier;
 	private String classify_name;

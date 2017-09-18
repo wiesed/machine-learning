@@ -22,7 +22,6 @@ import org.junit.Ignore;
  * @author Daniel Wiese
  * @since 02.06.2006
  */
-@Ignore
 public class SVMLightClassifyTest extends TestCase {
 
     private static final org.apache.log4j.Logger log = org.apache.log4j.Logger
