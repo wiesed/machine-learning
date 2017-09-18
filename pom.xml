@@ -47,17 +47,20 @@
 			<groupId>svm.light</groupId>
 			<artifactId>svmLight-mac</artifactId>
 			<version>8.4</version>
+            <scope>provided</scope>
 		</dependency>
-        <dependency>
-            <groupId>svm.light</groupId>
-            <artifactId>svmLight-windows</artifactId>
-            <version>8.4</version>
-        </dependency>
-        <dependency>
-            <groupId>svm.light</groupId>
-            <artifactId>svmLight-linux</artifactId>
-            <version>8.4</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>svm.light</groupId>-->
+            <!--<artifactId>svmLight-windows</artifactId>-->
+            <!--<version>8.4</version>-->
+            <!--<scope>provided</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>svm.light</groupId>-->
+            <!--<artifactId>svmLight-linux</artifactId>-->
+            <!--<version>8.4</version>-->
+            <!--<scope>provided</scope>-->
+        <!--</dependency>-->
 
         <!-- json dataien parden -->
         <dependency>
