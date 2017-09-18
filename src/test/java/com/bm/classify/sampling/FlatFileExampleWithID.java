@@ -236,19 +236,6 @@ public class FlatFileExampleWithID implements SampleableWithId {
         return this.id;
     }
 
-    /**
-     * ie wkn des unterliegenden objektes.
-     * 
-     * @author Daniel Wiese
-     * @since 18.08.2006
-     * @return - die wkn
-     * @author Daniel Wiese
-     * @since 27.08.2006
-     * @see com.bm.classify.sampling.Sampleable#getWKN()
-     */
-    public Integer getWKN() {
-        return null;
-    }
 
     /**
      * True wenn ein ein positives beispiel ist.

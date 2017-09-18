@@ -48,7 +48,7 @@ public class NewsKlassifikationLabelBo implements Serializable {
 //		this.primaryKey.klassifikationsaufgabe = type.toString();
 //		this.primaryKey.datumInMillis = news.getDatumInMillis();
 //		this.primaryKey.ueberschrift = news.getUeberschrift();
-//		this.primaryKey.wkn = news.getWkn();
+//		this.primaryKey.wkn = news.getIdentifier();
 //		this.label = label;
 //	}
 

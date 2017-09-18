@@ -31,7 +31,7 @@ public interface ISVMNewsLabel extends Serializable {
 	 * 
 	 * @return Returns the wkn.
 	 */
-	int getWkn();
+	int getIdentifier();
 
 	/**
 	 * Returns the zeit.

@@ -47,7 +47,7 @@ public class TermExtractorTest extends TestCase {
         TermExtractor toTest = new TermExtractor();
         TermSet back = toTest.getTermsAndFrequencies("Das ist $% Das BLBLBL (Xetra: BLBLBL O.N. ist (1234567890 ein 37363.38383 <MOT.NYS> <MTL.FSE> einfacher 234545 Iwoer AG (Xetra: Iwoer-DH (Xetra: test. 1971 ", false);
         Map<String, Integer> worte = back.getSortedMap();
-        assertEquals(back.size(), 15);
+        assertEquals(back.size(), 18);
         assertEquals(worte.get("das"), Integer.valueOf(2));
         assertEquals(worte.get("ist"), Integer.valueOf(2));
         assertEquals(worte.get("ein"), Integer.valueOf(1));
@@ -63,7 +63,6 @@ public class TermExtractorTest extends TestCase {
         assertEquals(worte.get("einfacher"), Integer.valueOf(1));
         assertEquals(worte.get(TermExtractor.FLOATINGZAHL_DELIM.toLowerCase()), Integer.valueOf(1));
         assertEquals(worte.get(TermExtractor.ZAHL_DELIM.toLowerCase()), Integer.valueOf(2));
-        assertEquals(worte.get(TermExtractor.XETRA_DELIMITER.toLowerCase()), Integer.valueOf(3));
         assertEquals(worte.get(TermExtractor.JAHR_DELIMITER.toLowerCase()), Integer.valueOf(1));
         assertEquals(worte.get("test"), Integer.valueOf(1));
 

@@ -8,8 +8,8 @@ package com.bm.classify.sampling;
  */
 public class SampleableImpl implements Sampleable {
 
-    private final int wkn;
 
+    private final long id;
     private final long time;
 
     private final boolean isPositive;
@@ -26,25 +26,14 @@ public class SampleableImpl implements Sampleable {
      *            ob es positiv ist
      * @param isSelectable -
      *            ob es auswaehlbar ist.
-     * @param wkn - wkn
      */
-    public SampleableImpl(int wkn, long time, boolean isPositive, boolean isSelectable) {
-        this.wkn = wkn;
+    public SampleableImpl(long id, long time, boolean isPositive, boolean isSelectable) {
+        this.id = id;
         this.time = time;
         this.isPositive = isPositive;
         this.isSelectable = isSelectable;
     }
 
-    /**
-     * Die wkn des unterliegenden objektes.
-     * 
-     * @author Daniel Wiese
-     * @since 18.08.2006
-     * @return - die wkn
-     */
-    public Integer getWKN() {
-        return this.wkn;
-    }
 
     /**
      * True wenn ein ein positives beispiel ist.
@@ -83,17 +72,7 @@ public class SampleableImpl implements Sampleable {
         return this.time;
     }
 
-    /**
-     * To string.
-     * 
-     * @return to string
-     * @author Daniel Wiese
-     * @since 27.08.2006
-     * @see java.lang.Object#toString()
-     */
-    @Override
-    public String toString() {
-        return "WKN: " + wkn;
+    public long getId() {
+        return id;
     }
-
 }

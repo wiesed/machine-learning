@@ -23,7 +23,7 @@ public class SVMGeneratedNewsLabel implements ISVMNewsLabel {
 
 	private Long id;
 
-	private Integer wkn;
+	private Integer identifier;
 
 
 	private Long zeit;
@@ -46,8 +46,8 @@ public class SVMGeneratedNewsLabel implements ISVMNewsLabel {
 	/**
 	 * Consructor with params.
 	 * 
-	 * @param wkn -
-	 *            die wkn
+	 * @param identifier -
+	 *            die identifier
 	 * @param newsid -
 	 *            die referenz zur newsID
 	 * @param zeit -
@@ -58,9 +58,9 @@ public class SVMGeneratedNewsLabel implements ISVMNewsLabel {
 	 * @param aufgabe -
 	 *            die lernaufgabe
 	 */
-	public SVMGeneratedNewsLabel(int wkn, long newsid, long zeit, double label,
-			KlassifikationsEnum aufgabe) {
-		this.wkn = wkn;
+	public SVMGeneratedNewsLabel(int identifier, long newsid, long zeit, double label,
+								 KlassifikationsEnum aufgabe) {
+		this.identifier = identifier;
 		this.newsid = newsid;
 		this.label = label;
 		this.zeit = zeit;
@@ -125,22 +125,22 @@ public class SVMGeneratedNewsLabel implements ISVMNewsLabel {
 	}
 
 	/**
-	 * Returns the wkn.
+	 * Returns the identifier.
 	 * 
-	 * @return Returns the wkn.
+	 * @return Returns the identifier.
 	 */
-	public int getWkn() {
-		return wkn;
+	public int getIdentifier() {
+		return identifier;
 	}
 
 	/**
-	 * Sets the wkn.
+	 * Sets the identifier.
 	 * 
-	 * @param wkn
-	 *            The wkn to set.
+	 * @param identifier
+	 *            The identifier to set.
 	 */
-	public void setWkn(Integer wkn) {
-		this.wkn = wkn;
+	public void setIdentifier(Integer identifier) {
+		this.identifier = identifier;
 	}
 
 	/**
