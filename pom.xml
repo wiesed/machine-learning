@@ -42,25 +42,6 @@
             <artifactId>joda-time</artifactId>
             <version>2.5</version>
         </dependency>
-		<!-- dependencies to SVM core implementation C++) -->
-		<!--<dependency>-->
-			<!--<groupId>svm.light</groupId>-->
-			<!--<artifactId>svmLight-mac</artifactId>-->
-			<!--<version>8.4</version>-->
-            <!--<scope>provided</scope>-->
-		<!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>svm.light</groupId>-->
-            <!--<artifactId>svmLight-windows</artifactId>-->
-            <!--<version>8.4</version>-->
-            <!--<scope>provided</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>svm.light</groupId>-->
-            <!--<artifactId>svmLight-linux</artifactId>-->
-            <!--<version>8.4</version>-->
-            <!--<scope>provided</scope>-->
-        <!--</dependency>-->
 
         <!-- json dataien parden -->
         <dependency>
