@@ -10,6 +10,7 @@ import com.bm.classify.core.result.LearnResult;
 import com.bm.common.util.BmUtil;
 
 import junit.framework.TestCase;
+import org.junit.Ignore;
 
 /**
  * Junit test mit einem echten svm train lauf.
@@ -17,6 +18,7 @@ import junit.framework.TestCase;
  * @author Daniel Wiese
  * @since 02.06.2006
  */
+@Ignore
 public class SVMLightLearnTest extends TestCase {
 
 	private static final org.apache.log4j.Logger log = org.apache.log4j.Logger
