@@ -95,4 +95,17 @@
         </dependency>
 	</dependencies>
 	<reporting />
+    <!-- Verteilung (SWM)-->
+    <distributionManagement>
+        <repository>
+            <id>SWMReleases</id>
+            <name>SWM Releases</name>
+            <url>http://nexus.intra.swm.de/nexus/content/repositories/swm-release-repo/</url>
+        </repository>
+        <snapshotRepository>
+            <id>SWMSnapshots</id>
+            <name>SWM Snapshots</name>
+            <url>http://nexus.intra.swm.de/nexus/content/repositories/swm-snapshot-repo/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
