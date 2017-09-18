@@ -24,7 +24,7 @@ public class SVMLightLearnTest extends TestCase {
 			.getLogger(SVMLightLearnTest.class);
 
 	/**
-	 * Junit test methode.
+	 * Junit test methode
 	 * 
 	 * @author Daniel Wiese
 	 * @since 02.06.2006
