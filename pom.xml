@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.bm</groupId>
+	<version>1.1.4-SNAPSHOT</version>
+	<artifactId>machine-learning</artifactId>
+	<name>maschine-learning</name>
+	<description>Machine Learning with Suport Vector Machines</description>
+	<url>https://github.com/wiesed/machine-learning/</url>
+	<issueManagement>
+		<url>https://github.com/wiesed/machine-learning/</url>
+	</issueManagement>
+	<dependencies>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId> 
+			<artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+		</dependency>
+        <dependency>
+			<groupId>org.apache.lucene</groupId> 
+			<artifactId>lucene-core</artifactId>
+            <version>2.0.0</version>
+		</dependency>
+        <!-- Entfernt html tags -->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.8.3</version>
+        </dependency>
+        <!-- ehcache -->
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache-core</artifactId>
+            <version>2.6.9</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.5</version>
+        </dependency>
+		<!-- dependencies to SVM core implementation C++) -->
+		<dependency>
+			<groupId>svm.light</groupId>
+			<artifactId>svmLight-mac</artifactId>
+			<version>8.4</version>
+		</dependency>
+
+        <!-- json dataien parden -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.3.3</version>
+        </dependency>
+        <!-- IO input -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>18.0</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+
+
+        <!-- Testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.9</version>
+            <scope>test</scope>
+        </dependency>
+	</dependencies>
+	<reporting />
+</project>
