@@ -54,7 +54,7 @@
             <!--<artifactId>svmLight-windows</artifactId>-->
             <!--<version>8.4</version>-->
             <!--<scope>provided</scope>-->
-        <!--</dependency>-->
+        <!--</dependency.>-->
         <dependency>
             <groupId>svm.light</groupId>
             <artifactId>svmLight-linux</artifactId>
