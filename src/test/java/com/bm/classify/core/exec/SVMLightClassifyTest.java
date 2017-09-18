@@ -14,6 +14,7 @@ import com.bm.classify.core.result.SinglePrediction;
 import com.bm.common.enums.Label;
 
 import junit.framework.TestCase;
+import org.junit.Ignore;
 
 /**
  * Testet svm light classify.
@@ -21,6 +22,7 @@ import junit.framework.TestCase;
  * @author Daniel Wiese
  * @since 02.06.2006
  */
+@Ignore
 public class SVMLightClassifyTest extends TestCase {
 
     private static final org.apache.log4j.Logger log = org.apache.log4j.Logger
