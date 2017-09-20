@@ -13,7 +13,6 @@ import java.util.SortedMap;
  * 08.11.16, Time: 10:35.
  *
  * @author wiese.daniel <br>
- *         copyright (C) 2016, SWM Services GmbH
  */
 public class DictionaryMakerService {
 
